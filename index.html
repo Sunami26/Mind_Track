@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindTrack - Mental Health Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">MindTrack</h1>
+
+        <!-- Registration Section -->
+        <div class="row">
+            <div class="col-md-6">
+                <div id="registration-section" class="p-3 bg-white shadow-sm rounded">
+                    <h2>Register</h2>
+                    <input class="form-control mt-2" id="reg-username" type="text" placeholder="Username" required>
+                    <input class="form-control mt-2" id="reg-password" type="password" placeholder="Password" required>
+                    <button class="btn btn-primary mt-3" onclick="register()">Register</button>
+                </div>
+            </div>
+
+            <!-- Login Section -->
+            <div class="col-md-6">
+                <div id="login-section" class="p-3 bg-white shadow-sm rounded">
+                    <h2>Login</h2>
+                    <input class="form-control mt-2" id="login-username" type="text" placeholder="Username" required>
+                    <input class="form-control mt-2" id="login-password" type="password" placeholder="Password" required>
+                    <button class="btn btn-primary mt-3" onclick="login()">Login</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mood Tracker Section -->
+        <div id="mood-tracker" class="mt-5 p-3 bg-white shadow-sm rounded" style="display: none;">
+            <h2>Track Your Mood</h2>
+            <input class="form-control mt-2" id="mood-input" type="text" placeholder="Enter your mood" required>
+            <button class="btn btn-success mt-3" onclick="trackMood()">Submit Mood</button>
+            <div id="mood-history" class="mt-3"></div>
+        </div>
+
+        <!-- Expense Logger Section -->
+        <div id="expense-logger" class="mt-5 p-3 bg-white shadow-sm rounded" style="display: none;">
+            <h2>Log Your Expenses</h2>
+            <input class="form-control mt-2" id="expense-input" type="text" placeholder="Enter your expense" required>
+            <button class="btn btn-success mt-3" onclick="logExpense()">Submit Expense</button>
+            <div id="expense-history" class="mt-3"></div>
+        </div>
+
+        <!-- Mood Chart Section -->
+        <div id="mood-chart-section" class="mt-5 p-3 bg-white shadow-sm rounded">
+            <h2>Your Mood Trends</h2>
+            <canvas id="moodChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Expense Chart Section -->
+        <div id="expense-chart-section" class="mt-5 p-3 bg-white shadow-sm rounded">
+            <h2>Your Expense Trends</h2>
+            <canvas id="expenseChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Chatbot Section -->
+        <div id="chatbot-section" class="mt-5 p-3 bg-white shadow-sm rounded" style="display: none;">
+            <h2>Chat with Bot</h2>
+            <input class="form-control mt-2" id="chat-input" type="text" placeholder="Ask me anything..." required>
+            <button class="btn btn-primary mt-3" onclick="chatWithBot()">Send</button>
+            <div id="chat-output" class="mt-3" style="height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;"></div>
+        </div>
+    </div>
+    <script src="script.js" defer></script> 
+</body>
+</html>
